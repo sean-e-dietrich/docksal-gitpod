@@ -1,3 +1,4 @@
 tasks:
   - before: |
-        DOCKSAL_VERSION=feature/gitpod curl -fsSL get.docksal.io | bash
+        export DOCKSAL_VERSION=feature/gitpod 
+        curl -fsSL get.docksal.io | bash
