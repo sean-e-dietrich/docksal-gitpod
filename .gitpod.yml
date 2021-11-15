@@ -1,16 +1,3 @@
 tasks:
   - before: |
-        mkdir $HOME/.docksal || true
-        (
-                echo 'DOCKSAL_ENVIRONMENT=gitpod'
-                echo 'DOCKSAL_VHOST_PROXY_PORT_HTTP=8080'
-                echo 'DOCKSAL_VHOST_PROXY_PORT_HTTPS=4343'
-                echo 'DOCKSAL_DNS_DISABLED=1'
-                echo 'DOCKSAL_NO_DNS_RESOLVER=1'
-                echo 'DOCKSAL_VHOST_PROXY_IP=0.0.0.0'
-        ) >> $HOME/.docksal/docksal.env
-        sudo apt update
-        sudo DEBIAN_FRONTEND=noninteractive apt -yq install dnsutils 
-        export DOCKSAL_VHOST_PROXY_PORT_HTTP=8080
-        export DOCKSAL_VHOST_PROXY_PORT_HTTPS=4343
-        curl -fsSL get.docksal.io | bash
+        DOCKSAL_VERSION=feature/gitpod curl -fsSL get.docksal.io | bash
