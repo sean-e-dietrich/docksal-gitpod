@@ -1,4 +1,5 @@
 tasks:
   - before: |
         export DOCKSAL_VERSION=feature/gitpod 
-        curl -fsSL get.docksal.io | bash
+        bash <(curl -fsSL https://get.docksal.io)
+    init: fin init
